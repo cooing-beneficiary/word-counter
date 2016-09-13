@@ -9,15 +9,18 @@
     	<h1>Word Counter</h1>
     </header>
 
-    {{test}}
-
-
+    <div >
 	{% block content %}
 	    
 	    {% include "includes/form.html" %}
-	    WORDS: {{word_form.data}}
+	    {{word_form.user_input.data}}
+
+	    <p>You entered {{ numchars }} of characters.</p>
+	    <p>You entered {{ numwords }} of words.</p>
+        <p>"put most frequent"</p>
 	    
 	{% endblock %}
+	</div>
 
 
 </body>

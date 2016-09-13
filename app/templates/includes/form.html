@@ -1,8 +1,7 @@
 <form action="" method="POST">
     <div>
-        {{ word_form.label }}
-        {{ word_form.(class="form-control",
-            placeholder="Your Words":)}}
+        {{ word_form.user_input.label }}
+        {{ word_form.user_input }}
     </div>
 
     <button type="submit" class="btn btn-primary">
@@ -11,8 +10,4 @@
 </form>
 
 
-{{ word_form.numchars }}
 
-{{ word_form.numwords }}
-
-{{ word_form.mostcommon }}
