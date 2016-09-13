@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Word Counter - Team Cooing Beneficiary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+    	<h1>Word Counter</h1>
+    </header>
+
+    {{test}}
+
+
+	{% block content %}
+	    
+	    {% include "includes/form.html" %}
+	    WORDS: {{word_form.data}}
+	    
+	{% endblock %}
+
+
+</body>
+
+</html>

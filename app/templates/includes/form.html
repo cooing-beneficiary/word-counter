@@ -1,0 +1,18 @@
+<form action="" method="POST">
+    <div>
+        {{ word_form.label }}
+        {{ word_form.(class="form-control",
+            placeholder="Your Words":)}}
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        GO
+    </button>
+</form>
+
+
+{{ word_form.numchars }}
+
+{{ word_form.numwords }}
+
+{{ word_form.mostcommon }}
