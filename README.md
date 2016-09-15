@@ -1,6 +1,8 @@
 # word-counter
 
-## LAB/HW
+### Status:
+
+Initial Requirements Met
 
 - Create a new organization with your team name
 
