@@ -1,0 +1,24 @@
+.jumbotron {
+	text-align: center;
+}
+
+.table-striped {
+    background-color:#999;
+    font-size:1.3em;
+    max-width:80%;
+}
+
+.table-striped td {
+	padding:10px;
+	margin:10px;
+}
+
+button {
+    margin:10px;
+}
+
+.word-counter {
+    padding:20px;
+    background-color: #999;
+
+}
