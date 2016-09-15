@@ -1,6 +1,8 @@
 from collections import Counter
 from flask import render_template, request
 from app import app
+
+# Our Feture Classes
 from app.forms import WordForm
 from app.forms import CalcForm
 
@@ -13,18 +15,17 @@ def return_most_common(in_string):
 class Calculator():
     def __init__(self):
         self.result = 0
-        self.operators = ['+','-','*','/'] 
         
-    def add(n1, n2):
+    def add(self, n1, n2):
         return n1 + n2
 
-    def sub(n1, n2):
+    def sub(self,n1, n2):
         return n1 - n2
 
-    def mult(n1, n2):
+    def mult(self, n1, n2):
         return n1 * n2
 
-    def div(n1, n2):
+    def div(self, n1, n2):
         return n1 / n2
 
 
@@ -66,36 +67,20 @@ def calc():
 
     if request.method == "POST":
         print('calc called')
-        n1 = calc_form.input1
-        n2 = calc_form.input2
-        op = calc_form.operator
+        n1 = calc_form.input1.data
+        n2 = calc_form.input2.data
+        op = calc_form.opers.data
         
-        if op == '+':
+        if op == 'ADD':
             result = calc.add(n1, n2)
-        elif op == '-':
+        elif op == 'SUB':
             result = calc.sub(n1, n2)
-        elif op == '*':
+        elif op == 'MULT':
             result = calc.mult(n1, n2)
-        elif op == '/':
-            result = cal.div(n1, n2)
+        elif op == 'DIV':
+            result = calc.div(n1, n2)
 
 
-    return render_template("calc.html", calc_form=calc_form, result=result)
-
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return render_template("calc.html",
+        calc_form=calc_form,
+        result=result)

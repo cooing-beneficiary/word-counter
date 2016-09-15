@@ -7,4 +7,11 @@ class WordForm(Form):
 class CalcForm(Form):
 	input1 = IntegerField("N1")
 	input2 = IntegerField("N2")
-	operator = RadioField("Radio Field")
+	opers = RadioField("Operators",
+        default='+',
+        choices = [
+            ('ADD', '+'),
+            ('SUB', '-'),
+            ('MULT', '*'),
+            ('DIV', '/')
+        ])

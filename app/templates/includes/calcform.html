@@ -1,7 +1,23 @@
 <form action="" method="POST">
     <div class="row">
-        {{ calc_form.result}}
-    	{{ calc_form}}
+
+    	<div class="form-group">
+
+        {{ calc_form.input1 }}
+        {{ calc_form.input2 }}
+
+
+	        {% for subfield in calc_form.opers %}
+	            <div class="radio">
+	                {{ subfield.label }}
+	                {{ subfield }}
+	            </div>
+	        {% endfor %}
+        </div>
+
     	<button type="submit" class="btn btn-primary btn-lg"></button>
     </div>
 </form>
+
+
+
