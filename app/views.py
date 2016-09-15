@@ -2,11 +2,30 @@ from collections import Counter
 from flask import render_template, request
 from app import app
 from app.forms import WordForm
+from app.forms import CalcForm
 
 # Instantiate a Counter and return result of most_common 
 def return_most_common(in_string):
     c = Counter(in_string)
     return c.most_common()[0][0]
+
+# Simple calculator class.
+class Calculator():
+    def __init__(self):
+        self.result = 0
+        self.operators = ['+','-','*','/'] 
+        
+    def add(n1, n2):
+        return n1 + n2
+
+    def sub(n1, n2):
+        return n1 - n2
+
+    def mult(n1, n2):
+        return n1 * n2
+
+    def div(n1, n2):
+        return n1 / n2
 
 
 # Route for index.html
@@ -36,3 +55,47 @@ def index():
         numwords=numwords,
         mostcommon_word=mostcommon_word,
         mostcommon_char=mostcommon_char)
+
+# Route for calculator.html
+@app.route("/calc", methods=["GET", "POST"])
+def calc():
+
+    calc = Calculator()
+    calc_form = CalcForm(request.form)
+    result = 0
+
+    if request.method == "POST":
+        print('calc called')
+        n1 = calc_form.input1
+        n2 = calc_form.input2
+        op = calc_form.operator
+        
+        if op == '+':
+            result = calc.add(n1, n2)
+        elif op == '-':
+            result = calc.sub(n1, n2)
+        elif op == '*':
+            result = calc.mult(n1, n2)
+        elif op == '/':
+            result = cal.div(n1, n2)
+
+
+    return render_template("calc.html", calc_form=calc_form, result=result)
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
