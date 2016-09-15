@@ -1,52 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Calculator - Team Cooing Beneficiary</title>
+{% extends "base.html" %}
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+{% block content %}
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    
-    <!-- Our custom style rules -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-
-    <header>
-        <div class="container">
-    	    <div class="jumbotron">
-    	    	<h1>Calc</h1>
-    	    </div>	
-        </div>
-    </header>
-    <hr>
-
-    <div class="container ">
-        <div class="panel panel-default">
-
-        	{% block content %}
-                <!-- calcform  -->
-        	    {% include "includes/calcform.html" %}
-                <p>Result {{ result }} characters.</td></tr>
-        	{% endblock %}
-        </div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Calculator</h3>
     </div>
-    <hr>
 
-    <div class="panel panel-default">
-        <p>Calculator</p>
-          
-   </div>
-    
-    </div>   
+    <div class="panel-body">
 
+        <!-- calcform  -->
+	    {% include "includes/calcform.html" %}
+        <p>Result {{ result }} characters.</p>
 
-    <!-- bootstrap and jquery -->
-    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </div> <!-- end Panel content -->
+</div>
 
-</body>
-</html>
+{% endblock %}
