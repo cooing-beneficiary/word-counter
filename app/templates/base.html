@@ -33,12 +33,19 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+
                     <a href="{{ url_for('index') }}" class="navbar-brand">Home</a>
                 </div>
+
                 <div id="header-navbar-collapse" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
+
+                        <!-- Our links -->
                         <li><a href="{{ url_for('index') }}">Word Counter</a></li>
                         <li><a href="{{ url_for('calc') }}">Calculator</a></li>
+                        <li><a href="{{ url_for('times_table') }}">Times Table</a></li>
+                        <li><a href="{{ url_for('rand_user') }}">Random User</a></li>
+
                     </ul>
                 </div>
             </div>

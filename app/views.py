@@ -1,3 +1,4 @@
+import json
 from collections import Counter
 from flask import render_template, request
 from app import app
@@ -98,6 +99,31 @@ def times_table():
 
 
     return render_template("table.html", rows=rows)
+
+
+@app.route("/random_user", methods=["GET", "POST"])
+def rand_user():
+
+    user_data = "hello world"
+
+
+    # call to api
+    # get our data
+    # assign data to var names
+    # output our varn ames to render_tamplate
+
+
+    return render_template("random_user.html", user_data=user_data)
+
+
+
+
+
+
+
+    
+
+
 
 
 
