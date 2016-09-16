@@ -1,4 +1,5 @@
 import json
+import requests
 from collections import Counter
 from flask import render_template, request
 from app import app
@@ -101,27 +102,51 @@ def times_table():
     return render_template("table.html", rows=rows)
 
 
+# Route for random user data feature.
+
 @app.route("/random_user", methods=["GET", "POST"])
 def rand_user():
 
-    user_data = "hello world"
-
-
-    # call to api
-    # get our data
-    # assign data to var names
-    # output our varn ames to render_tamplate
-
-
-    return render_template("random_user.html", user_data=user_data)
-
-
-
-
-
-
+    def result_or_error(result):
+        pass
 
     
+    # Once user hits button.
+    #if request.method == "POST":
+
+    r = requests.get("https://randomuser.me/api?results=10")
+    data = r.json()
+
+    user_data = []
+
+    for i in range(len(data["results"])):
+        first = data["results"][i]['name']['first']
+        last  = data["results"][i]['name']['last']
+        pict = data["results"][i]['picture']['thumbnail']
+        person = str(first) + ' ' + str(last)
+        user_data.append(person)
+
+    return render_template("random_user.html", user_data=user_data, pict=pict)
+
+
+"""
+class RandomUserAPI():
+    def __init__(self)
+        self.url = "https://randomuser.me/api/"
+        self.results = 10
+        self.payload = {
+            "results": self.results
+        }
+"""
+
+
+
+
+
+
+
+
+
 
 
 

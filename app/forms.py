@@ -15,3 +15,4 @@ class CalcForm(Form):
             ('MULT', '*'),
             ('DIV', '/')
         ])
+
