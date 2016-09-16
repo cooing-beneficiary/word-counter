@@ -2,9 +2,6 @@
 	text-align: center;
 }
 
-label {
-	margin:10px;
-}
 
 form {
 	padding:25px;
@@ -39,4 +36,3 @@ button {
 	min-width:250px;
 	margin:10px;
 }
-

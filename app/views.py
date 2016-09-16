@@ -40,7 +40,7 @@ def index():
 
     word_form = WordForm(request.form)
 
-    if request.method == "POST" and len(word_form.user_input.data) > 0:
+    if request.method == "POST" and word_form.validate():
 
         # Get words, number of characters, and most common char and word.
         words = word_form.user_input.data
@@ -65,7 +65,7 @@ def calc():
     calc_form = CalcForm(request.form)
     result = 0
 
-    if request.method == "POST":
+    if request.method == "POST" and calc_form.validate():
         print('calc called')
         n1 = calc_form.input1.data
         n2 = calc_form.input2.data

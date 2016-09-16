@@ -8,7 +8,7 @@ class CalcForm(Form):
 	input1 = IntegerField("N1")
 	input2 = IntegerField("N2")
 	opers = RadioField("Operators",
-        default='+',
+        default = '+',
         choices = [
             ('ADD', '+'),
             ('SUB', '-'),
