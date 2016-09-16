@@ -84,3 +84,20 @@ def calc():
     return render_template("calc.html",
         calc_form=calc_form,
         result=result)
+
+
+
+@app.route("/table", methods=["GET", "POST"])
+def times_table():
+
+    rows = []
+
+    for row in range(1, 11):
+        for col in range(1, 11):
+            rows.append(row * col)
+
+    return render_template("table.html", rows=rows)
+
+
+
+    
