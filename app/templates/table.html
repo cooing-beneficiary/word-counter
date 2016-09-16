@@ -9,11 +9,13 @@
 
     <div class="panel-body">
         
-    {% for row in rows %}
-        {{ row }}     
+    <table>
+    {% for num in rows %}
+        {{ num }}     
     {% endfor %}
 
     </div> <!-- end Panel content -->
+    </table>
 </div>
 
 {% endblock %}

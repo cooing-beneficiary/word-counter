@@ -96,8 +96,9 @@ def times_table():
         for col in range(1, 11):
             rows.append(row * col)
 
+
     return render_template("table.html", rows=rows)
 
 
 
-    
+
