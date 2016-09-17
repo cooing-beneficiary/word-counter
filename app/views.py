@@ -69,7 +69,6 @@ def calc():
     result = 0
 
     if request.method == "POST" and calc_form.validate():
-        print('calc called')
         n1 = calc_form.input1.data
         n2 = calc_form.input2.data
         op = calc_form.opers.data
@@ -92,14 +91,16 @@ def calc():
 @app.route("/table", methods=["GET", "POST"])
 def times_table():
 
-    rows = []
+    table = []
 
-    for row in range(1, 11):
-        for col in range(1, 11):
-            rows.append(row * col)
+    for n1 in range(1, 11):
+        row = []
+        for n2 in range(1, 11):
+            row.append(n1 * n2)
 
+        table.append(row)
 
-    return render_template("table.html", rows=rows)
+    return render_template("table.html", table=table)
 
 
 # Route for random user data feature.
@@ -113,16 +114,3 @@ def rand_user():
 
     user_data = data["results"]
     return render_template("random_user.html", user_data=user_data)
-
-
-
-
-
-
-
-
-
-
-
-
-
