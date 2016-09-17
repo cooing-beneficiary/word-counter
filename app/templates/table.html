@@ -9,11 +9,11 @@
 
     <div class="panel-body">
         
-    <table>
+    <table class="table table-striped times-table">
     {% for row in table %}
     <tr>
         {% for digit in row %}  
-            <td>{{ digit }}</td>
+            <td class="times-table-cell">{{ digit }}</td>
         {% endfor %}
     </tr>
     

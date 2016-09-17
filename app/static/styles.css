@@ -54,3 +54,12 @@ button {
 	min-width:400px;
 }
 
+.times-table {
+	border-left:solid 1px;
+}
+
+.times-table-cell {
+	margin:2px;
+	border-right: solid 1px;
+	text-align: center;
+}
