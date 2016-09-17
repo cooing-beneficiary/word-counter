@@ -110,36 +110,14 @@ def rand_user():
     def result_or_error(result):
         pass
 
-    
     # Once user hits button.
     #if request.method == "POST":
 
     r = requests.get("https://randomuser.me/api?results=10")
     data = r.json()
 
-    user_data = []
-
-    for i in range(len(data["results"])):
-        first = data["results"][i]['name']['first']
-        last  = data["results"][i]['name']['last']
-        pict = data["results"][i]['picture']['thumbnail']
-        person = str(first) + ' ' + str(last)
-        user_data.append(person)
-
-    return render_template("random_user.html", user_data=user_data, pict=pict)
-
-
-"""
-class RandomUserAPI():
-    def __init__(self)
-        self.url = "https://randomuser.me/api/"
-        self.results = 10
-        self.payload = {
-            "results": self.results
-        }
-"""
-
-
+    user_data = data["results"]
+    return render_template("random_user.html", user_data=user_data)
 
 
 
