@@ -10,15 +10,17 @@
     <div class="panel-body">
    
         {% for user in user_data %}
-            <img src="{{ user.picture.thumbnail }}">
+            <div class="well well-sm">
+            <img class = "user-photo" src="{{ user.picture.large}}">
             <h3>{{ user.name.first }} {{ user.name.last }}</h3>
             
 
-            <ul>
+            <ul class="user-list">
                 <li>{{ user.email }}</li>
                 <li>{{ user.phone }}</li>
             </ul>
             <hr>
+            </div>
         {% endfor %}
 
     </div> <!-- end Panel content -->

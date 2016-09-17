@@ -36,3 +36,15 @@ button {
 	margin:10px;
 }
 
+.user-photo {
+	float:left;
+}
+
+.user-list {
+	margin-left:25px;
+	list-style: none;
+}
+
+.well img {
+	margin-right: 25px
+}
