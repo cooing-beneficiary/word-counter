@@ -28,7 +28,8 @@ table {
 
 .panel {
 	width:60%;
-	margin:auto
+	margin:auto;
+	min-width:450px;
 }
 
 button {
@@ -38,6 +39,9 @@ button {
 
 .user-photo {
 	float:left;
+	margin-top:5px;
+    margin-left: 50px;
+	border-radius:100%;
 }
 
 .user-list {
@@ -45,6 +49,8 @@ button {
 	list-style: none;
 }
 
-.well img {
-	margin-right: 25px
+.well {
+	text-align:center;
+	min-width:400px;
 }
+

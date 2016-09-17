@@ -1,8 +1,8 @@
-import json
-import requests
-from collections import Counter
 from flask import render_template, request
 from app import app
+from collections import Counter
+import requests
+import json
 
 # Our Feture Classes
 from app.forms import WordForm
@@ -31,7 +31,7 @@ class Calculator():
         return n1 / n2
 
 
-# Route for index.html
+# Route for word counter feature.
 @app.route("/", methods=["GET", "POST"])
 def index():
 
@@ -59,7 +59,8 @@ def index():
         mostcommon_word=mostcommon_word,
         mostcommon_char=mostcommon_char)
 
-# Route for calculator.html
+
+# Route for calculator feature.
 @app.route("/calc", methods=["GET", "POST"])
 def calc():
 
@@ -87,8 +88,7 @@ def calc():
         calc_form=calc_form,
         result=result)
 
-
-
+# Route for times table feature.
 @app.route("/table", methods=["GET", "POST"])
 def times_table():
 
@@ -103,13 +103,8 @@ def times_table():
 
 
 # Route for random user data feature.
-
 @app.route("/random_user", methods=["GET", "POST"])
 def rand_user():
-
-    def result_or_error(result):
-        pass
-
     # Once user hits button.
     #if request.method == "POST":
 
