@@ -1,24 +1,23 @@
-<form action="" method="POST">
- 
+<div class="well">
+    <form class="calc-form" action="" method="POST">
     	<div class="form-group">
 
-        {{ calc_form.input1 }}
-        {{ calc_form.input2 }}   
-        </div>
-
-
-        <div class="form-group">
-        {% for subfield in calc_form.opers %}
-            <div class="radio">
+            {% for subfield in calc_form.opers %}
                 {{ subfield.label }}
-                {{ subfield }}
-            </div>
-        {% endfor %}
-        </div>
+                <div class="radio">{{ subfield }}</div>
+            {% endfor %}
 
-    	<button type="submit" class="btn btn-primary btn-lg">Calc</button>
-    
-</form>
+            <div class="calc-inputs">
+                {{ calc_form.input1 }}
+                {{ calc_form.input2 }} 
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg">Calc</button>
+        </div>
+    </form>
+
+    <h2>{{ result }}</h2>
+</div>
 
 
 

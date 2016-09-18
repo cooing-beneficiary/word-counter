@@ -64,3 +64,23 @@ button {
 	border-right: solid 1px;
 	text-align: center;
 }
+
+.calc-form label {
+	font-size:1.25em;
+	color:#008fcc;
+	margin:5px;
+}
+
+.radio {
+	display:inline-block;
+	margin:20px;
+}
+
+.calc-inputs {
+	margin-top:10px;
+}
+
+.calc-inputs input{
+	width:50px;
+	margin:auto;
+}
