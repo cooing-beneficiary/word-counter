@@ -4,7 +4,7 @@ from collections import Counter
 import requests
 import json
 
-# Our Feture Classes
+# Our Feature Classes
 from app.forms import WordForm
 from app.forms import CalcForm
 
@@ -114,3 +114,28 @@ def rand_user():
 
     user_data = data["results"]
     return render_template("random_user.html", user_data=user_data)
+
+
+
+@app.route("/repos", methods=["GET", "POST"])
+def repos():
+    
+    repos_form = ReposForm(request.form)  
+
+    gh = "https://api.github.com/users"
+
+    if request.method == "POST" and repos_form.validate(): 
+        r = requests.get("https://api.github.com/users")
+        data = r.json()
+
+    user_data = data
+    return render_template("repos.html", user_data=user_data)
+
+
+
+
+
+
+
+
+

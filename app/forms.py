@@ -16,3 +16,6 @@ class CalcForm(Form):
             ('DIV', '/')
         ])
 
+class ReposForm(Form)
+    user_input = StringField("Please enter User Name")
+        
