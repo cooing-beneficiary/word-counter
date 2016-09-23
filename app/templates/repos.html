@@ -8,22 +8,28 @@
     </div>
 
     <div class="panel-body">
-        <!-- calcform  -->
+        <!-- repoform  -->
           {% include "includes/repoform.html" %}
-
-
-          {% for user in user_data %}
+    
+            
             <div class="well well-sm">
-                <img class = "user-photo" src="{{ user.picture.large}}">
-                <h3 class="text-capitalize">{{ user.name.first }} {{ user.name.last }}</h3>
                 
                 <ul class="user-list">
-                    <li>Email: {{ user.email }}</li>
-                    <li>Phone: {{ user.phone }}</li>
+                {% if user_data %}
+                <p>The repositories of the user you requested.</p>
+
+                {% for repo in user_data %}
+             
+                    <li>  {{ repo.name }} <br><a href="{{ repo.url }}">{{ repo.url }}</a> <hr> </li>
+
+                {% endfor %}
+                {% endif %}
                 </ul>
                 <hr>
+           
             </div>
-        {% endfor %}
+           
+
 
     </div> <!-- end Panel content -->
 </div>

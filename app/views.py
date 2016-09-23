@@ -117,20 +117,25 @@ def rand_user():
     return render_template("random_user.html", user_data=user_data)
 
 
-
+# Route for Github API user repos.
 @app.route("/repos", methods=["GET", "POST"])
 def repos():
     
+    user_data = 0
     repos_form = ReposForm(request.form)  
+    gh = "https://api.github.com/users/"
 
-    gh = "https://api.github.com/users"
+    if request.method == "POST" and repos_form.validate():
+        
+        # Add username to the url string.
+        gh += repos_form.user_input.data
+        gh += '/repos'
 
-    if request.method == "POST" and repos_form.validate(): 
-        r = requests.get("https://api.github.com/users")
+        r = requests.get(gh)
         data = r.json()
+        user_data = data
 
-    
-    return render_template("repos.html", user_data=user_data)
+    return render_template("repos.html", repos_form=repos_form, user_data=user_data)
 
 
 
